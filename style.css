@@ -1,139 +1,220 @@
-:root {
-    --primary-color: #333;
-    --secondary-color: #ffd700;
-    --accent-color1: #f8d7aa;
-    --accent-color2: #fff5ee;
-    --terracota: #d2691e;
-    --font-primary: 'Playfair Display', serif;
-    --font-secondary: 'Inter', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: var(--font-secondary);
-    background-color: var(--primary-color);
-    color: #fff;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
 }
 
-header {
-    padding: 2rem 1rem;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: rgba(20, 19, 18, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+}
+
+.navbar .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: bold;
     text-align: center;
-    background-color: var(--accent-color1);
 }
 
-nav ul {
+.navbar nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-left: 1.5rem;
+}
+
+.navbar .cta-button {
+    background-color: #C86F46;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.navbar .cta-button:hover {
+    background-color: #BB6C45;
+}
+
+.hero {
+    background-image: url('hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
     display: flex;
     justify-content: center;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.25rem;
-    transition: all 0.3s ease-in-out;
-}
-
-nav ul li a:hover {
-    transform: scale(1.1);
-}
-
-#hero {
-    padding: 10rem 0;
+    align-items: center;
+    color: white;
     text-align: center;
-    background-image: url('hero-background.jpg');
-    background-size: cover;
-    color: #fff;
 }
 
-h1, h2 {
-    font-family: var(--font-primary);
-}
-
-h1 {
-    font-size: 3.5rem;
+.hero .hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
     margin-bottom: 0.5rem;
 }
 
-p {
+.hero .hero-content p {
+    font-family: 'Inter', sans-serif;
     font-size: 1.25rem;
-    margin-bottom: 2rem;
-}
-
-#historia {
-    padding: 4rem 1rem;
-    background-color: var(--accent-color2);
-}
-
-#carta, #opiniones, #horarios, #contacto {
-    padding: 4rem 1rem;
-    background-color: var(--primary-color);
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    justify-items: center;
-}
-
-.card {
-    padding: 1rem;
-    border-radius: 8px;
-    background-color: var(--accent-color1);
-    transition: all 0.3s ease-in-out;
-}
-
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-iframe {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 0.75rem;
     margin-bottom: 1rem;
-    border-radius: 8px;
+}
+
+.hero .buttons button {
+    background-color: #C86F46;
+    color: white;
     border: none;
-    background-color: var(--accent-color2);
-    color: #333;
-    font-size: 1rem;
-}
-
-form input[type="submit"] {
+    padding: 0.75rem 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
     cursor: pointer;
-    background-color: var(--secondary-color);
-    color: #fff;
-    transition: all 0.3s ease-in-out;
+    margin-right: 0.5rem;
 }
 
-form input[type="submit"]:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2);
+.hero .buttons button:hover {
+    background-color: #BB6C45;
 }
 
-footer {
+.presentation {
+    padding: 2rem;
+    text-align: center;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.feature h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #C86F46;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.menu {
+    padding: 2rem;
+}
+
+.menu .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.menu .card {
+    background-color: #FAF6F0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+}
+
+.menu .card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu .card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu .card span {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: #C86F46;
+    margin-top: 1rem;
+}
+
+.reviews {
+    padding: 2rem;
+    text-align: center;
+}
+
+.review h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.review p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.location {
+    padding: 2rem;
+    text-align: center;
+}
+
+.location .address h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.location .address p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.location ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.location ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.location .cta-button {
+    background-color: #C86F46;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.location .cta-button:hover {
+    background-color: #BB6C45;
+}
+
+.footer {
+    background-color: #141312;
+    color: white;
     padding: 1rem 0;
     text-align: center;
-    background-color: var(--terracota);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
 }
