@@ -7,70 +7,62 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <div class="logo">Vermuteca</div>
+            <ul class="menu">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#horarios">Horarios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#carta">Carta</a></li>
-            <li><a href="#opiniones">Opiniones</a></li>
-            <li><a href="#horarios">Horarios</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
-</header>
+    <section id="hero">
+        <h1>Bienvenido a Vermuteca</h1>
+        <p>Sabores únicos en un ambiente elegante.</p>
+    </section>
 
-<section id="hero">
-    <h1>Vermuteca - Vermut y tapas artesanales</h1>
-    <p>Descubre la elegancia en cada sorbo de vermut y cada plato servido.</p>
-</section>
-
-<section id="historia">
-    <h2>Nuestra historia</h2>
-    <p>Vermuteca fue fundada en 1980 con el objetivo de compartir la cultura italiana a través de su cocina tradicional. Nuestro menú se basa en recetas familiares y la excelencia del vermut.</p>
-</section>
-
-<section id="carta">
-    <h2>Carta</h2>
-    <!-- Aquí va tu sección de carta con categorías y platos -->
-</section>
-
-<section id="opiniones">
-    <h2>Opiniones</h2>
-    <div class="grid-container">
-        <div class="card">
-            <p>"El vermut es increíblemente bien hecho y las tapas son de alta calidad." - Juan Pérez</p>
+    <section id="menu">
+        <div class="category">
+            <h2>Tapas</h2>
+            <div class="item">Tapenade con pimientos y alcachofa - $8</div>
+            <div class="item">Croquettes de atún - $10</div>
         </div>
-        <div class="card">
-            <p>"Recomiendo con todo mi corazón. El servicio es excepcional." - María López</p>
+        <div class="category">
+            <h2>Platillos</h2>
+            <div class="item">Asado de ternera a la plancha - $25</div>
+            <div class="item">Pescadito con arroz al curry - $18</div>
         </div>
-    </div>
-</section>
+        <div class="category">
+            <h2>Vermuts</h2>
+            <div class="item">Vermut de Cachaça - $5</div>
+            <div class="item">Vermut de Ginebra - $6</div>
+        </div>
+    </section>
 
-<section id="horarios">
-    <h2>Horarios</h2>
-    <p>Lunes a Viernes: 12:00 - 23:00</p>
-    <p>Sábado y Domingo: 10:00 - 22:00</p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9076.54321221282!2d-3.68873797566221!3d40.4167751238131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422b5c9e048c8f%3A0x6968a4d7ed85d2a0!2sVermuteca!5e0!3m2!1ses-419!2ses!4v1633072800000!5m2!1ses-419!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</section>
+    <section id="horarios">
+        <h2>Horarios de Atención</h2>
+        <div class="weekday">
+            <h3>Lunes a Sábado</h3>
+            <p>12:00 PM - 11:00 PM</p>
+        </div>
+        <div class="weekday">
+            <h3>Domingo</h3>
+            <p>10:00 AM - 9:00 PM</p>
+        </div>
+    </section>
 
-<section id="contacto">
-    <h2>Contacto</h2>
-    <form action="#" method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre"><br><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email"><br><br>
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje"></textarea><br><br>
-        <input type="submit" value="Enviar">
-    </form>
-</section>
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <address>Av. de las Flores, 123, Ciudad, País</address>
+        <p>Teléfono: +54 911-12345678</p>
+        <p>Email: info@vermuteca.com</p>
+    </section>
 
-<footer>
-    <p>&copy; 2023 Vermuteca. Todos los derechos reservados.</p>
-</footer>
-
+    <footer>
+        <p>&copy; 2023 Vermuteca. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
