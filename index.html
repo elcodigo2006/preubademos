@@ -3,66 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vermuteca</title>
+    <title>Gepetto - Est. Rubí, Barcelona</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header class="navbar">
+        <div class="logo">Gepetto</div>
         <nav>
-            <div class="logo">Vermuteca</div>
-            <ul class="menu">
-                <li><a href="#hero">Inicio</a></li>
-                <li><a href="#menu">Menú</a></li>
-                <li><a href="#horarios">Horarios</a></li>
+            <ul>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#carta">Carta</a></li>
+                <li><a href="#opiniones">Opiniones</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
+        <button class="reserva-btn">Reservar</button>
     </header>
 
-    <section id="hero">
-        <h1>Bienvenido a Vermuteca</h1>
-        <p>Sabores únicos en un ambiente elegante.</p>
+    <section class="hero">
+        <h2>EST. RUBÍ, BARCELONA</h2>
+        <h1>Gepetto</h1>
+        <p>Somos un restaurante de comida casera con una atmosfera única en el corazón de Rubí.</p>
+        <button class="reserva-mesa">Reservar Mesa</button>
+        <button class="ver-carta">Ver la Carta</button>
     </section>
 
-    <section id="menu">
-        <div class="category">
-            <h2>Tapas</h2>
-            <div class="item">Tapenade con pimientos y alcachofa - $8</div>
-            <div class="item">Croquettes de atún - $10</div>
+    <section class="presentacion">
+        <div class="texto-descriptivo">
+            <h3>Sobre Nosotros</h3>
+            <p>Gepetto es un lugar especial donde la comida casera y el servicio familiar son lo más importante. Nuestra misión es crear momentos de placer en cada visitante, ofreciendo platos auténticos que transmiten la historia de nuestra cocina.</p>
         </div>
-        <div class="category">
-            <h2>Platillos</h2>
-            <div class="item">Asado de ternera a la plancha - $25</div>
-            <div class="item">Pescadito con arroz al curry - $18</div>
+        <ul class="caracteristicas">
+            <li>Abiertos desde las 5:15h</li>
+            <li>Gran terraza exterior</li>
+            <li>Parking gratuito</li>
+            <li>Para todos</li>
+        </ul>
+    </section>
+
+    <section id="carta" class="la-carta">
+        <div class="plato">
+            <h3>Arroz con Bogavante</h3>
+            <p>Sabroso arroz cocinado al vapor con pimientos, cebolla y aceite de oliva.</p>
+            <span class="precio">18,90€</span>
         </div>
-        <div class="category">
-            <h2>Vermuts</h2>
-            <div class="item">Vermut de Cachaça - $5</div>
-            <div class="item">Vermut de Ginebra - $6</div>
+        <div class="plato">
+            <h3>Paella Valenciana</h3>
+            <p>Clásica paella valenciana con arroz, marisco y verduras.</p>
+            <span class="precio">14,50€</span>
+        </div>
+        <div class="plato">
+            <h3>Costillas con Patatas</h3>
+            <p>Carnes de costilla asadas al carbón acompañadas de patatas fritas.</p>
+            <span class="precio">12,90€</span>
         </div>
     </section>
 
-    <section id="horarios">
-        <h2>Horarios de Atención</h2>
-        <div class="weekday">
-            <h3>Lunes a Sábado</h3>
-            <p>12:00 PM - 11:00 PM</p>
-        </div>
-        <div class="weekday">
-            <h3>Domingo</h3>
-            <p>10:00 AM - 9:00 PM</p>
+    <section id="opiniones" class="seccion-opiniones">
+        <h3>Opiniones</h3>
+        <div class="tarjeta-testimonio">
+            <p>"Excelente experiencia. El servicio es rápido y el plato fue de lo mejor que he probado."</p>
+            <cite>- Ana, 4.0 de 5 — Basado en 1.159 reseñas de Google</cite>
         </div>
     </section>
 
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <address>Av. de las Flores, 123, Ciudad, País</address>
-        <p>Teléfono: +54 911-12345678</p>
-        <p>Email: info@vermuteca.com</p>
+    <section id="ubicacion" class="ubicacion">
+        <div>
+            <h3>Dirección</h3>
+            <p>Avinguda de Can Sucarrats, 110, 08191 Rubí, Barcelona</p>
+            <p>Teléfono: +34 676 54 10 29</p>
+            <h3>Horarios</h3>
+            <ul>
+                <li>Lunes: 5:15 – 21:00</li>
+                <li>Martes: 5:15 – 21:00</li>
+                <li>Miércoles: 5:15 – 21:00</li>
+                <li>Jueves: 5:15 – 21:00</li>
+                <li>Viernes: 5:15 – 21:00</li>
+                <li>Sábado: 5:15 – 17:00</li>
+                <li>Domingo: Cerrado</li>
+            </ul>
+        </div>
+        <div id="map-container"></div>
     </section>
 
-    <footer>
-        <p>&copy; 2023 Vermuteca. Todos los derechos reservados.</p>
+    <footer class="footer">
+        <nav>
+            <ul>
+                <li><a href="#">Acerca de Gepetto</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Terminos y Condiciones</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2023 Gepetto. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
