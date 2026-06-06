@@ -1,65 +1,49 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navbar = document.querySelector('.navbar');
-    const revealElements = document.querySelectorAll('.reveal');
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.querySelector('header nav button');
+    const mobileNav = document.querySelector('header nav ul');
+    const header = document.querySelector('header');
 
-    // Mobile Menu Toggle
-    menuToggle.addEventListener('click', () => {
-        document.body.classList.toggle('mobile-menu-open');
+    // Hover effects for buttons and links
+    document.querySelectorAll('button, a').forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            element.style.transform = 'scale(1.05)';
+            element.classList.add('hovered');
+        });
+        element.addEventListener('mouseleave', () => {
+            element.style.transform = 'scale(1)';
+            element.classList.remove('hovered');
+        });
     });
 
-    // Intersection Observer for .reveal elements
-    const observer = new IntersectionObserver((entries) => {
+    // Toggle mobile menu
+    menuBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('active');
+        if (mobileNav.classList.contains('active')) {
+            menuBtn.textContent = 'Cerrar';
+        } else {
+            menuBtn.textContent = 'Reservar';
+        }
+    });
+
+    // Scroll behavior for navbar
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Reveal sections on scroll
+    const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            } else {
-                entry.target.classList.remove('visible');
+                entry.target.classList.add('reveal-visible');
             }
         });
-    }, {
-        threshold: 0.1
-    });
+    }, { threshold: 0.25 });
 
-    revealElements.forEach(element => observer.observe(element));
-
-    // Navbar Scroll Effect
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop && scrollTop > 60) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-    });
-
-    // Active Link on Scroll
-    const sections = document.querySelectorAll('section');
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 60;
-            if (window.scrollY >= sectionTop) {
-                current = section.getAttribute('id');
-            }
-        });
-        navbar.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
+    document.querySelectorAll('.card, .review-card').forEach(section => {
+        observer.observe(section);
     });
 });
