@@ -5,17 +5,19 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Playfair Display', serif;
     scroll-behavior: smooth;
+    background-color: #F4E6D2;
 }
 
 header {
     position: sticky;
     top: 0;
     backdrop-filter: blur(10px);
-    background-color: rgba(26, 27, 34, 0.8);
+    background-color: rgba(255, 237, 218, 0.9);
     padding: 1rem 0;
     width: 100%;
+    z-index: 1000;
 }
 
 nav ul {
@@ -31,26 +33,40 @@ button {
     padding: 0.5rem 1rem;
     border-radius: 4px;
     font-family: 'Playfair Display', serif;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav a:hover,
+button:hover {
+    background-color: #FED7AA;
+    box-shadow: 0 2px 4px rgba(255, 199, 162, 0.5);
 }
 
 .hero {
-    background-color: #FAF6F0;
+    background-image: url('hero-image.jpg');
+    background-size: cover;
+    background-position: center;
     height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #fff;
     text-align: center;
+    position: relative;
 }
 
 .hero h1 {
     font-size: 3rem;
     margin: 0;
+    letter-spacing: -2px;
+    line-height: 1.2;
 }
 
 .hero p {
     font-size: 2rem;
     margin-bottom: 2rem;
+    font-style: italic;
 }
 
 .hero button {
@@ -62,6 +78,13 @@ button {
     margin-left: 0.5rem;
     font-family: 'Playfair Display', serif;
     text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(255, 199, 162, 0.5);
+}
+
+.hero button:hover {
+    background-color: #FFB783;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
 }
 
 .features {
@@ -69,36 +92,53 @@ button {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 2rem;
     padding: 2rem 0;
-    background-color: #FAF6F0;
+    background-color: #F4E6D2;
+    position: relative;
+    z-index: 999;
 }
 
 .feature h3 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+    line-height: 1.2;
 }
 
 .menu {
     padding: 2rem 0;
+    background-color: #F4E6D2;
+    position: relative;
+    z-index: 998;
 }
 
 .menu h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
+    letter-spacing: -2px;
+    line-height: 1.2;
 }
 
 .card {
     background-color: white;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     text-align: center;
     margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .card h3 {
     font-size: 1.75rem;
     margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+    line-height: 1.2;
 }
 
 .card p {
@@ -116,6 +156,9 @@ button {
 
 .reviews {
     padding: 2rem 0;
+    background-color: #FAE6D2;
+    position: relative;
+    z-index: 997;
 }
 
 .review-card {
@@ -137,18 +180,22 @@ button {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 2rem;
     padding: 2rem 0;
-    background-color: #FAF6F0;
+    background-color: #F4E6D2;
+    position: relative;
+    z-index: 996;
 }
 
 .location h3 {
     margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+    line-height: 1.2;
 }
 
 footer {
     position: sticky;
     bottom: 0;
     backdrop-filter: blur(10px);
-    background-color: rgba(26, 27, 34, 0.8);
+    background-color: rgba(255, 237, 218, 0.9);
     padding: 1rem 0;
     width: 100%;
     text-align: center;
@@ -157,6 +204,11 @@ footer {
 footer a {
     color: #C86F46;
     margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #FFB783;
 }
 
 footer p {
