@@ -1,0 +1,139 @@
+:root {
+    --primary-color: #333;
+    --secondary-color: #ffd700;
+    --accent-color1: #f8d7aa;
+    --accent-color2: #fff5ee;
+    --terracota: #d2691e;
+    --font-primary: 'Playfair Display', serif;
+    --font-secondary: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-secondary);
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+header {
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: var(--accent-color1);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.25rem;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    transform: scale(1.1);
+}
+
+#hero {
+    padding: 10rem 0;
+    text-align: center;
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    color: #fff;
+}
+
+h1, h2 {
+    font-family: var(--font-primary);
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+#historia {
+    padding: 4rem 1rem;
+    background-color: var(--accent-color2);
+}
+
+#carta, #opiniones, #horarios, #contacto {
+    padding: 4rem 1rem;
+    background-color: var(--primary-color);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    justify-items: center;
+}
+
+.card {
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--accent-color1);
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+iframe {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--accent-color2);
+    color: #333;
+    font-size: 1rem;
+}
+
+form input[type="submit"] {
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+form input[type="submit"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2);
+}
+
+footer {
+    padding: 1rem 0;
+    text-align: center;
+    background-color: var(--terracota);
+}
