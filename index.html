@@ -4,116 +4,182 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gepetto - Est. Rubí, Barcelona</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+        .hero {
+            background-image: url('hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        .hero button {
+            padding: 0.5rem 1rem;
+            background-color: #ff6f00;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem 0;
+            background-color: #f9f9f9;
+        }
+        .feature {
+            text-align: center;
+        }
+        .menu {
+            padding: 2rem 0;
+        }
+        .menu h2 {
+            margin-bottom: 1rem;
+        }
+        .card {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            text-align: center;
+        }
+        .reviews {
+            background-color: #fff;
+            padding: 2rem 0;
+        }
+        .review-card {
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 0;
+            display: flex;
+            align-items: center;
+        }
+        .location {
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem 0;
+            background-color: #f9f9f9;
+        }
+        .map-container {
+            width: 100%;
+            height: 300px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-
-<header class="navbar">
-    <div class="logo">Gepetto</div>
-    <nav>
-        <ul>
-            <li><a href="#about">Nosotros</a></li>
-            <li><a href="#menu">Carta</a></li>
-            <li><a href="#reviews">Opiniones</a></li>
-            <li><a href="#contact">Contacto</a></li>
-        </ul>
-    </nav>
-    <button class="cta-button">Reservar</button>
-</header>
-
-<section class="hero">
-    <div class="hero-content">
+    <header>
+        <nav>
+            <a href="#home">Nosotros</a>
+            <a href="#menu">Carta</a>
+            <a href="#reviews">Opiniones</a>
+            <a href="#contact">Contacto</a>
+            <button>Reservar</button>
+        </nav>
+    </header>
+    <section class="hero">
         <h1>Gepetto</h1>
         <p>EST. RUBÍ, BARCELONA</p>
-        <p>Somos un restaurante de alta gama en el corazón de Rubí. Descubre nuestra deliciosa cocina y reserva tu mesa hoy.</p>
-        <div class="buttons">
-            <button class="cta-button">Reservar Mesa</button>
-            <button class="cta-button">Ver la Carta</button>
-        </div>
-    </div>
-</section>
-
-<section id="about" class="presentation">
-    <div class="description">
-        <p>Somos un restaurante de alta gama ubicado en el vibrante distrito de Rubí. Ofrecemos una experiencia gastronómica única, combinando calidad y sabor con un ambiente acogedor y elegante.</p>
-    </div>
-    <div class="features">
+        <button>Reservar Mesa</button>
+        <button>Ver la Carta</button>
+    </section>
+    <section class="features">
         <div class="feature">
             <h3>Abiertos desde las 5:15h</h3>
+            <p>Disfruta de nuestra comida fresca y rica en cualquier momento del día.</p>
         </div>
         <div class="feature">
             <h3>Gran terraza exterior</h3>
+            <p>Descubre nuestro espacio al aire libre para disfrutar de la comida con amigos y familiares.</p>
         </div>
         <div class="feature">
             <h3>Parking gratuito</h3>
+            <p>No te preocupes por los estacionamientos, nuestra opción gratuita está disponible todo el tiempo.</p>
         </div>
         <div class="feature">
             <h3>Para todos</h3>
+            <p>Nuestra carta y ambiente son accesibles para todas las edades y preferencias alimenticias.</p>
         </div>
-    </div>
-</section>
-
-<section id="menu" class="menu">
-    <div class="grid">
+    </section>
+    <section class="menu" id="menu">
+        <h2>La Carta</h2>
         <div class="card">
-            <h2>Arroz con Bogavante</h2>
-            <p>Pimentón, perejil y un toque especial de hierbas.</p>
+            <h3>Arroz con Bogavante</h3>
+            <p>Arroz cocinado al vapor con pimientos, aceitunas y especias de Bogavante.</p>
             <span>18,90€</span>
         </div>
         <div class="card">
-            <h2>Paella Valenciana</h2>
-            <p>Arroz al vapor con mariscos frescos.</p>
+            <h3>Paella Valenciana</h3>
+            <p>Classica paella hecha con arroz, calabacín, pimientos y conejo.</p>
             <span>14,50€</span>
         </div>
         <div class="card">
-            <h2>Costillas con Patatas</h2>
-            <p>Bebida incluida en todos los platos principales.</p>
+            <h3>Costillas con Patatas</h3>
+            <p>Deliciosa costilla de cerdo, acompañada de patatas horneadas y especias.</p>
             <span>12,90€</span>
         </div>
-    </div>
-</section>
-
-<section id="reviews" class="reviews">
-    <div class="review">
-        <h3>4.0 de 5 — Basado en 1.159 reseñas de Google</h3>
-        <p><strong>John Doe:</strong> "La experiencia fue simplemente excepcional. El servicio es increíble y el plato principal era delicioso."</p>
-    </div>
-</section>
-
-<section id="contact" class="location">
-    <div class="address">
-        <h3>Dirección</h3>
-        <p>Avinguda de Can Sucarrats, 110, 08191 Rubí, Barcelona</p>
-        <h3>Teléfono</h3>
-        <p>+34 678 901 234</p>
-        <h3>Horarios</h3>
-        <ul>
-            <li>Lunes: 5:15 – 21:00</li>
-            <li>Martes: 5:15 – 21:00</li>
-            <li>Miércoles: 5:15 – 21:00</li>
-            <li>Jueves: 5:15 – 21:00</li>
-            <li>Viernes: 5:15 – 21:00</li>
-            <li>Sábado: 5:15 – 17:00</li>
-            <li>Domingo: Cerrado</li>
-        </ul>
-    </div>
-    <div id="map-container"></div>
-</section>
-
-<footer class="footer">
-    <nav>
-        <ul>
-            <li><a href="#about">Nosotros</a></li>
-            <li><a href="#menu">Carta</a></li>
-            <li><a href="#reviews">Opiniones</a></li>
-            <li><a href="#contact">Contacto</a></li>
-        </ul>
-    </nav>
-    <p>&copy; 2023 Gepetto. Todos los derechos reservados.</p>
-</footer>
-
-<script src="script.js"></script>
-
+    </section>
+    <section class="reviews" id="reviews">
+        <h2>Opiniones</h2>
+        <div class="review-card">
+            <img src="avatar.jpg" alt="Avatar" style="width: 50px; height: 50px; border-radius: 50%;">
+            <p><strong>John Doe - 4.0 de 5 — Basado en 1.159 reseñas de Google</strong></p>
+        </div>
+    </section>
+    <section class="location" id="contact">
+        <h2>Contacto</h2>
+        <div>
+            <h3>Dirección</h3>
+            <p>Avinguda de Can Sucarrats, 110, 08191 Rubí, Barcelona</p>
+            <h3>Teléfono</h3>
+            <p>+34 931 234 567</p>
+        </div>
+        <div id="map-container"></div>
+    </section>
+    <footer>
+        <a href="#home">Nosotros</a> | <a href="#menu">Carta</a> | <a href="#reviews">Opiniones</a> | <a href="#contact">Contacto</a>
+        <p>&copy; 2023 Gepetto. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
